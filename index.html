@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod 8 - Map APIs</title>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--My CSS-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
+
+    <style>
+        body {
+            background-color:rgb(56, 59, 70);
+            text-align: center;
+           
+        }
+        #map1 {
+            width: 90%;
+            height: 60vh;
+            margin: 2em auto 1em auto;
+            border: 2px solid rgb(166, 174, 204);
+        }
+
+        h1 {
+            font-size: 25px;
+            font-family: Helvetica, sans-serif;
+            color: rgb(52, 185, 179);
+            width: 90%;
+            margin: 2em auto .5em auto;
+        }
+        h2 {
+            font-size: 18px;
+            font-family: Helvetica, sans-serif;
+            color: rgb(166, 174, 204);
+            width: 90%;
+            margin: 0 auto 1em auto;
+        }
+        p {
+            font-size: 13px;
+            font-family: Helvetica, sans-serif;
+            color: rgb(166, 174, 204);
+            width: 90%;
+            margin: 1em auto 1em auto;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>A Sad Story on a Map</h1>
+    <h2>How all Erin's friends scattered across the U.S.</h2>
+    <p>I always thought I'd move back to Nashville eventually... but then all my friends moved away too.    </p>
+    <!--The div element for the map -->
+    <div id="map1"></div>
+
+    <!--custom JS-->
+    <script>
+        //declare var outside function so they're global
+        var map1, markers;
+
+        function initMap() {
+            //create map
+            var map1_center = {
+                        lat: 39.965420452909854,
+                        lng: -97.59782272230852
+                    };
+
+            var map1 = new google.maps.Map(
+                        // tell gmap the html element to draw map inside of
+                    document.getElementById('map1'),
+                    {
+                        // provide the center in latitude and longitude
+                        center: map1_center,
+                        // set the zoom level for the map
+                        zoom: 3,
+                        styles: [
+                            {
+                                "featureType": "administrative",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative.locality",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative.neighborhood",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.man_made",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.natural",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "color": "#e0efef"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "landscape.natural",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "geometry.fill",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "hue": "#1900ff"
+                                    },
+                                    {
+                                        "color": "#c0e8e8"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "poi",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "lightness": 100
+                                    },
+                                    {
+                                        "visibility": "simplified"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road",
+                                "elementType": "labels",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "transit",
+                                "elementType": "labels.text",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "transit",
+                                "elementType": "labels.icon",
+                                "stylers": [
+                                    {
+                                        "visibility": "off"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "transit.line",
+                                "elementType": "geometry",
+                                "stylers": [
+                                    {
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "lightness": 700
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "water",
+                                "elementType": "all",
+                                "stylers": [
+                                    {
+                                        "color": "#7dcdcd"
+                                    }
+                                ]
+                            }
+                        ]
+                    });
+
+            // Geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => { //aka. function(position){...}
+                        var your_location = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        
+                        //create marker
+                        var  your_location_marker = new google.maps.Marker(
+                            {
+                                position: your_location,
+                                map: map1,
+                                title: "You are here.",
+                                icon: "https://maps.google.com/mapfiles/kml/paddle/ltblu-stars.png"
+                            }
+                        );
+
+                        //create click event for marker
+                        your_location_marker.addListener(
+                            'click',
+                            // create pop-up
+                            function() {
+                                var popUp = new google.maps.InfoWindow(
+                                    { 
+                                        content: "You are here"
+                                    }
+                                );
+                                popUp.open(map1, your_location_marker);
+                            }
+                        );
+                    }
+                )}
+                
+            // Load JSON file + Create Markers
+            $.getJSON( "map.json",
+                function(jsonData) {
+                    // the code in this function is run by jQuery after JSON loads
+                    
+                    // Loop thru JSON data -> Create Markers + Info Windows + Click Events
+                    markers = [];
+                    for ( var i=0; i<jsonData.length; i++ ) {
+                        // create a marker that is placed on the map
+                        var geocoord = {
+                            lat: jsonData[i].lat,
+                            lng: jsonData[i].lng
+                        };
+                        markers[i] = new google.maps.Marker(
+                            {
+                                position: geocoord,
+                                map: map1,
+                                title: jsonData[i].title,
+                                custom_property: jsonData[i].description,
+                                icon: "https://maps.google.com/mapfiles/kml/paddle/pink-blank.png"
+                            }
+                        );
+                        // step 4. define a click event + open pop-up
+                        markers[i].addListener(
+                            'click',
+                            // create pop-up
+                            function() {
+                                var popUp1 = new google.maps.InfoWindow(
+                                    { 
+                                        content: this.custom_property 
+                                    }
+                                );
+                                popUp1.open(map1, this);
+                            }
+                        );
+                    }
+                }
+            )
+            
+        }
+    </script>
+
+    <!--Google Map API JS-->
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzS-ClvnFvdsK4ZQTxW8zV1yYRKucw2U8&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+  </body>
+</html>

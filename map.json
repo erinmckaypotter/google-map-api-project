@@ -1,0 +1,94 @@
+[
+    {
+      "title": "Mom & Dad",
+      "lat": 35.96076953114763,
+      "lng": -87.15247375152741,
+      "description": "<h2>Mom & Dad</h2><p>This is my parents house. They live on 5 beautiful wooded acres near Nashville, TN</p>"
+    },
+    {
+      "title": "My Ma",
+      "lat": 35.961472942258375,
+      "lng": -87.15125066405514,
+      "description": "<h2>Grandma's House</h2><p>My grandma lives next door on 25 beautiful wooded acres. Part of it is my grandpa's junkjard, but that isn't as big of an eyesore as the giant ugly subdivision someone recently built next door.</p>"
+    },
+    {
+      "title": "Jess",
+      "lat": 36.71809654942228,
+      "lng": -86.5742416746078,
+      "description": "<h2>Jess</h2><p>My friend Jess is one of the few who still live nearby (but not that close, she technically lives in KY). Her husband got a job as a vet in this little town.</p>"
+    },
+    {
+      "title": "Carlos",
+      "lat": 35.8315233940077,
+      "lng": -86.38619830639502,
+      "description": "<h2>Carlos</h2><p>Carlos is one of the few that still lives in the Nashville area, in the town we went to college. He's got a lot of family and friends in the area, so he probably won't move.</p>"
+    },
+    {
+      "title": "Tristan",
+      "lat": 36.14253554419119,
+      "lng": -86.75395414840133,
+      "description": "<h2>Tristan</h2><p>He still lives in Nashville, for the time being anyway. Wanna bet $5 he moves in the next year?</p>"
+    },
+    {
+      "title": "Jane",
+      "lat": 40.771121746665955,
+      "lng": -73.96148828443752,
+      "description": "<h2>Jane</h2><p>Jane lives in NY working for a fine art print shop, because she's a badass who actually did something with her art degree, unlike the rest of us.</p>"
+    },
+    {
+      "title": "Kacee",
+      "lat": 36.34000080963747,
+      "lng": -82.36630746483009,
+      "description": "<h2>Kacee</h2><p>Why Johnson City? Idk. Isn't it in the middle of nowhere in Appalachia and really far from everyone? Yeah, but her boyfriend's from there and I guess they like it?</p>"
+    },
+    {
+         
+      "title": "Laura",
+      "lat": 40.690991443476534,
+      "lng": -73.92852930073335,
+      "description": "<h2>Laura</h2><p>Another ambitious artist friend hoping to make it as an artist in NYC.</p>"
+    },
+    {
+      "title": "Lil' Erin",
+      "lat": 40.66599604115514,
+      "lng": -73.91479639042635,
+      "description": "<h2>Lil' Erin</h2><p>She's a tatoo artist now..but fancy because it's Brooklyn. We call her \"lil'\" to distiguish between us, because she's even shorter than I am.</p>"
+    },
+    {
+      "title": "Kara",
+      "lat": 41.662427246557826,
+      "lng": -91.55462305109849,
+      "description": "<h2>Kara</h2><p>She's in grad school at the University of Iowa.</p>"
+    },
+    {
+         
+      "title": "Ian",
+      "lat": 40.511562828360525,
+      "lng": -88.99269579960853,
+      "description": "<h2>Ian</h2><p>They're in grad school at Illinois State University.</p>"
+    },
+    {
+      "title": "Morgan",
+      "lat": 46.883745544805414,
+      "lng": -114.01817724967532,
+      "description": "<h2>Morgan</h2><p>I've known Morgan since we were tiny little kids. She up and moved to Montana with her boyfriend after high school and joined a punk band. Seems to be going surpising well for her actually. They tour sometimes. She came through Oakland last year.</p>"
+    },
+    {
+      "title": "Tom",
+      "lat": 39.70591810689406,
+      "lng": -104.96776671796387,
+      "description": "<h2>Tom</h2><p>Tom's a web developer. He moved to Denver for his job that uses AI to count sperm in photos. Who knew that was a thing?</p>"
+    },
+    {
+      "title": "Kat",
+      "lat": 38.64998681196761,
+      "lng": -122.95851641260022,
+      "description": "<h2>Kat</h2><p>I met Kat in California, so she technically didn't move away.</p>"
+    },
+    {
+      "title": "Ericka",
+      "lat": 40.12172243687691,
+      "lng": -123.82260100168003,
+      "description": "<h2>Ericka</h2><p>I met Ericka in California, so she technically didn't move away.</p>"
+    }
+]
